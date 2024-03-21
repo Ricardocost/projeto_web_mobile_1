@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Projetos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .tab {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-form, .tabs {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .tabs button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+        }
+        .tabs button:hover {
+            background-color: #555;
+        }
+        .tabs button.active {
+            background-color: #555;
+        }
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], textarea, input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Meus Projetos</h1>
+</header>
+
+<div class="container">
+    <div class="login-form">
+        <h2>Login</h2>
+        <button onclick="showTab('tab1')">Login</button>
+    </div>
+
+    <div class="tabs">
+        <button class="active" onclick="showTab('tab2')">Sobre o Site</button>
+        <button onclick="showTab('tab3')">Contato</button>
+        <button onclick="showTab('tab4')">Projetos Atuais</button>
+        <button onclick="showTab('tab5')">Cadastrar</button>
+    </div>
+
+    <div id="tab1" class="tab">
+        <div class="card">
+            <h2>Login</h2>
+            <!-- Formulário de login -->
+            <form action="#" method="post">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required><br><br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+    </div>
+
+    <div id="tab2" class="tab active">
+        <div class="card">
+            <h2>Sobre o Site</h2>
+            <p>O site foi criado para conectar pessoas interessadas em ajudar em projetos sociais. Se você está buscando uma forma de contribuir com a comunidade, este é o lugar certo para você!</p>
+        </div>
+    </div>
+
+    <div id="tab3" class="tab">
+        <div class="card">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco:</p>
+            <ul>
+                <li><strong>Nome:</strong> João Silva</li>
+                <li><strong>E-mail:</strong> exemplo@email.com</li>
+                <li><strong>Telefone:</strong> (11) 1234-5678</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="tab4" class="tab">
+        <div class="card">
+            <h2>Projetos Atuais</h2>
+            <table>
+                <caption>Tabela de Projetos Atuais</caption>
+                <thead>
+                    <tr>
+                        <th>Projeto</th>
+                        <th>Descrição</th>
+                        <th>Ano</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Procriança</td>
+                        <td>tem como objetivo ajudar na adoção de crianças promovendo os centros e permitindo doações online</td>
+                        <td>2022</td>
+                    </tr>
+                    <tr>
+                        <td>SLVPETS</td>
+                        <td>tem como objetivo a ajuda e apoio a canis e doações online </td>
+                        <td>2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="tab5" class="tab">
+        <div class="card">
+            <h2>Cadastrar</h2>
+            <form action="#" method="post">
+                <label for="cadastro_nome">Nome:</label>
+                <input type="text" id="cadastro_nome" name="cadastro_nome" required><br><br>
+                <label for="cadastro_email">E-mail:</label>
+                <input type="email" id="cadastro_email" name="cadastro_email" required><br><br>
+                <label for="projeto">Projeto:</label>
+                <select id="projeto" name="projeto" required>
+                    <option value="" selected disabled>Selecione um projeto</option>
+                    <option value="procrianca">Procriança</option>
+                    <option value="slvpets">SLVPETS</option>
+                </select><br>
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showTab(tabName) {
+        var i;
+        var tabs = document.getElementsByClassName("tab");
+        var buttons = document.getElementsByClassName("tabs")[0].getElementsByTagName("button");
+        for (i = 0; i < tabs.length; i++) {
+            tabs[i].style.display = "none";
+        }
+        for (i = 0; i < buttons.length; i++) {
+            buttons[i].className = buttons[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        document.querySelector('button[data-tab="' + tabName + '"]').className += " active";
+    }
+</script>
+
+</body>
+</html>
