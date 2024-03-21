@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+    <title>Meus Projetos</title>
     <style>
-        /* Estilos CSS inline para simplificar */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -54,12 +53,50 @@
         .tabs button.active {
             background-color: #555;
         }
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], textarea, input[type="password"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Meu Portfólio</h1>
+    <h1>Meus Projetos</h1>
 </header>
 
 <div class="container">
@@ -69,9 +106,9 @@
     </div>
 
     <div class="tabs">
-        <button class="active" onclick="showTab('tab2')">Sobre Mim</button>
+        <button class="active" onclick="showTab('tab2')">Sobre o Site</button>
         <button onclick="showTab('tab3')">Contato</button>
-        <button onclick="showTab('tab4')">Meus Projetos</button>
+        <button onclick="showTab('tab4')">Projetos Atuais</button>
         <button onclick="showTab('tab5')">Cadastrar</button>
     </div>
 
@@ -91,32 +128,28 @@
 
     <div id="tab2" class="tab active">
         <div class="card">
-            <h2>Sobre Mim</h2>
-            <p>Coloque aqui uma breve descrição sobre você e seus interesses.</p>
+            <h2>Sobre o Site</h2>
+            <p>O site foi criado para conectar pessoas interessadas em ajudar em projetos sociais. Se você está buscando uma forma de contribuir com a comunidade, este é o lugar certo para você!</p>
         </div>
     </div>
 
     <div id="tab3" class="tab">
         <div class="card">
             <h2>Contato</h2>
-            <!-- Formulário de contato -->
-            <form action="#" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required><br><br>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
-                <input type="submit" value="Enviar">
-            </form>
+            <p>Entre em contato conosco:</p>
+            <ul>
+                <li><strong>Nome:</strong> João Silva</li>
+                <li><strong>E-mail:</strong> exemplo@email.com</li>
+                <li><strong>Telefone:</strong> (11) 1234-5678</li>
+            </ul>
         </div>
     </div>
 
     <div id="tab4" class="tab">
         <div class="card">
-            <h2>Meus Projetos</h2>
+            <h2>Projetos Atuais</h2>
             <table>
-                <caption>Tabela de Projetos</caption>
+                <caption>Tabela de Projetos Atuais</caption>
                 <thead>
                     <tr>
                         <th>Projeto</th>
@@ -126,13 +159,13 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Projeto 1</td>
-                        <td>Descrição do Projeto 1</td>
+                        <td>Procriança</td>
+                        <td>tem como objetivo ajudar na adoção de crianças promovendo os centros e permitindo doações online</td>
                         <td>2022</td>
                     </tr>
                     <tr>
-                        <td>Projeto 2</td>
-                        <td>Descrição do Projeto 2</td>
+                        <td>SLVPETS</td>
+                        <td>tem como objetivo a ajuda e apoio a canis e doações online </td>
                         <td>2023</td>
                     </tr>
                 </tbody>
@@ -143,7 +176,19 @@
     <div id="tab5" class="tab">
         <div class="card">
             <h2>Cadastrar</h2>
-            <p>Aqui você pode adicionar um formulário para cadastro de novos usuários.</p>
+            <form action="#" method="post">
+                <label for="cadastro_nome">Nome:</label>
+                <input type="text" id="cadastro_nome" name="cadastro_nome" required><br><br>
+                <label for="cadastro_email">E-mail:</label>
+                <input type="email" id="cadastro_email" name="cadastro_email" required><br><br>
+                <label for="projeto">Projeto:</label>
+                <select id="projeto" name="projeto" required>
+                    <option value="" selected disabled>Selecione um projeto</option>
+                    <option value="procrianca">Procriança</option>
+                    <option value="slvpets">SLVPETS</option>
+                </select><br>
+                <input type="submit" value="Cadastrar">
+            </form>
         </div>
     </div>
 </div>
